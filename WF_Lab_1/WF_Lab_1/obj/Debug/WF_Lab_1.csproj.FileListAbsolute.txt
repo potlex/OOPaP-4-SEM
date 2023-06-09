@@ -1,0 +1,11 @@
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\bin\Debug\WF_Lab_1.exe.config
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\bin\Debug\WF_Lab_1.exe
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\bin\Debug\WF_Lab_1.pdb
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.csproj.AssemblyReference.cache
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.csproj.SuggestedBindingRedirects.cache
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.Properties.Resources.resources
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.csproj.GenerateResource.cache
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.csproj.CoreCompileInputs.cache
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.exe
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.pdb
+D:\ООПиП 2s\WF_Lab_1\WF_Lab_1\obj\Debug\WF_Lab_1.CalculatorForm.resources

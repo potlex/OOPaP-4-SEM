@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Control xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <airport>
+    <Airport>
+      <airList />
+      <Airport>5</Airport>
+      <Type>пассажирский</Type>
+      <Model>Airbus</Model>
+      <Crew>Стасенко Виктор Сергеевич пилот 35 8</Crew>
+      <PassCapacity>0</PassCapacity>
+      <YearOfCreate>0</YearOfCreate>
+      <LoadCapacity>0</LoadCapacity>
+      <LastTS>0001-01-01T00:00:00</LastTS>
+      <FullSet>false</FullSet>
+    </Airport>
+    <Airport>
+      <airList />
+      <Airport>547373</Airport>
+      <Type>грузовой</Type>
+      <Model>Heinkel</Model>
+      <Crew>System.Windows.Forms.ListBox+SelectedObjectCollection</Crew>
+      <PassCapacity>65</PassCapacity>
+      <YearOfCreate>1986</YearOfCreate>
+      <LoadCapacity>75</LoadCapacity>
+      <LastTS>2023-02-03T00:00:00</LastTS>
+      <FullSet>true</FullSet>
+      <OtherDesc>376</OtherDesc>
+      <Owner>TurkishAirlines 1970 Turkish АН СУ</Owner>
+    </Airport>
+  </airport>
+</Control>� 35 8</string>
+        <string>Григоренко Сергей Анатольевич пилот 56 24</string>
+        <string>Фалько Анастасия Викторовна стюардесса 24 4</string>
+      </Crew>
+      <PassCapacity>240</PassCapacity>
+      <YearOfCreate>2000</YearOfCreate>
+      <LoadCapacity>75</LoadCapacity>
+      <LastTS>2023-02-05T00:00:00</LastTS>
+      <FullSet>true</FullSet>
+      <OtherDesc />
+      <Owner>TurkishAirlines 1970 Turkish АН СУ</Owner>
+    </Airport>
+    <Airport>
+      <airList />
+      <Airport>1</Airport>
+      <Type>пассажирский</Type>
+      <Model>СУ</Model>
+      <Crew>
+        <string>Стасенко Виктор Сергеевич пилот 35 8</string>
+        <string>Григоренко Сергей Анатольевич пилот 56 24</string>
+        <string>Фалько Анастасия Викторовна стюардесса 24 4</string>
+      </Crew>
+      <PassCapacity>266</PassCapacity>
+      <YearOfCreate>1981</YearOfCreate>
+      <LoadCapacity>55</LoadCapacity>
+      <LastTS>2023-02-10T00:00:00</LastTS>
+      <FullSet>false</FullSet>
+      <OtherDesc />
+      <Owner>TurkishAirlines 1970 Turkish АН СУ</Owner>
+    </Airport>
+  </airport>
+</Control>

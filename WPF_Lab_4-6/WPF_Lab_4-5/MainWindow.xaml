@@ -1,0 +1,139 @@
+﻿<Window x:Class="WPF_Lab_4_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Lab_4_5"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="720" Width="1280">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:WindowCommands.Exit" Executed="Exit_Executed"/>
+    </Window.CommandBindings>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Button.FontSize" Value="12" />
+                <Setter Property="Button.Foreground" Value="White"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsPressed" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="Foreground" Value="DarkGray" />
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+                <EventTrigger RoutedEvent="Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Duration="0:0:1" To="220" AutoReverse="True" />
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Duration="0:0:1" To="80" AutoReverse="True" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="mainGrid" Style="{DynamicResource mainBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="380"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="110"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="640*"></ColumnDefinition>
+            <ColumnDefinition Width="551*"></ColumnDefinition>
+            <ColumnDefinition Width="89*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="2" x:Name="add_button" Content="{DynamicResource add}" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Height="100" Width="250" FontSize="36" 
+                FontWeight="Bold" Click="add_button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter  Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource ="/button_image.png" Stretch="None"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" x:Name="manage_button" Content="{DynamicResource manage}" HorizontalAlignment="Left" 
+            VerticalAlignment="Center" Height="100" Width="250" FontSize="36" 
+            FontWeight="Bold" Click="manage_button_Click" Margin="195,0,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter  Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource ="/button_image.png" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Center" Source="/logo_image.png"/>
+        <Button x:Name="button_swapTheme" Grid.Column="2" VerticalAlignment="Center" BorderThickness="0"
+                HorizontalAlignment="Center" Width="60" Height="60" Click="button_swapTheme_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter  Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="D:\ООПиП 2s\WPF_Lab_4-6\WPF_Lab_4-5\Sources\theme.png" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_ru_lang" Grid.Column="2" VerticalAlignment="Center" BorderThickness="0"
+            HorizontalAlignment="Center" Width="60" Height="60" Grid.Row="2" Margin="0,4,0,0" Click="button_ru_lang_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="D:\ООПиП 2s\WPF_Lab_4-6\WPF_Lab_4-5\Sources\rus_lang.png" Stretch="None" Opacity="1"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_eng_lang" Grid.Column="2" VerticalAlignment="Top" BorderThickness="0"
+            HorizontalAlignment="Center" Width="60" Height="60" Grid.Row="3" Click="button_eng_lang_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter  Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <ImageBrush ImageSource="D:\ООПиП 2s\WPF_Lab_4-6\WPF_Lab_4-5\Sources\eng_lang.png" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="100" Margin="19,14,0,-4" 
+                    Background="Wheat" PreviewMouseDown="Tunneling_MouseDown">
+            <Button Height="80" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Margin="0,10,0,0" Background="LightGray" PreviewMouseDown="Tunneling_MouseDown">
+                <Rectangle Width="60" Height="60" Fill="LightGreen" PreviewMouseDown="Tunneling_MouseDown"/>
+            </Button>
+        </StackPanel>
+        <Button Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="100" 
+                    Margin="149,14,0,-4" Background="Wheat" Click="Outer_Click">
+            <Button Height="80" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Background="LightGray" Click="Outer_Click">
+                <Button Width="60" Height="60" Background="LightGreen" Click="Outer_Click"/>
+            </Button>
+        </Button>
+        <Button Grid.Row="3" HorizontalAlignment="Left" Width="100" Height="100" 
+                    Margin="279,14,0,-4" Background="Wheat" Click="First_Click">
+            <Button Height="80" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Margin="0,10,0,0" Background="LightGray" Click="Second_Click">
+                <Button Width="60" Height="60" Background="LightGreen" Click="Third_Click"/>
+            </Button>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="19,0,0,0" 
+                VerticalAlignment="Center" Width="80" Height="80"
+                BorderThickness="0" Background="Transparent" Content="✖" Foreground="Black" 
+                FontSize="48" Command="local:WindowCommands.Exit"/>
+    </Grid>
+</Window>

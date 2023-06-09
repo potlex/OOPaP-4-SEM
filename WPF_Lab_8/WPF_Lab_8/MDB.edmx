@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище oopdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADDRESS">
+          <Key>
+            <PropertyRef Name="id_address" />
+          </Key>
+          <Property Name="id_address" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="street" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="house" Type="int" Nullable="false" />
+          <Property Name="build" Type="int" Nullable="false" />
+          <Property Name="flat" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PASSPORT">
+          <Key>
+            <PropertyRef Name="id_passport" />
+          </Key>
+          <Property Name="id_passport" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="serial" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="number" Type="int" Nullable="false" />
+          <Property Name="photo" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="id_person" />
+          </Key>
+          <Property Name="id_person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="middle_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="id_address" Type="int" Nullable="false" />
+          <Property Name="id_passport" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PERSON_ADDRESS">
+          <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADDRESS">
+              <PropertyRef Name="id_address" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="id_address" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_PASSPORT">
+          <End Role="PASSPORT" Type="Self.PASSPORT" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASSPORT">
+              <PropertyRef Name="id_passport" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="id_passport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище oopdbModelContainer">
+          <EntitySet Name="ADDRESS" EntityType="Self.ADDRESS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PASSPORT" EntityType="Self.PASSPORT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSON" EntityType="Self.PERSON" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PERSON_ADDRESS" Association="Self.FK_PERSON_ADDRESS">
+            <End Role="ADDRESS" EntitySet="ADDRESS" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_PASSPORT" Association="Self.FK_PERSON_PASSPORT">
+            <End Role="PASSPORT" EntitySet="PASSPORT" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="oopdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADDRESS">
+          <Key>
+            <PropertyRef Name="id_address" />
+          </Key>
+          <Property Name="id_address" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="street" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="house" Type="Int32" Nullable="false" />
+          <Property Name="build" Type="Int32" Nullable="false" />
+          <Property Name="flat" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PERSON" Relationship="Self.FK_PERSON_ADDRESS" FromRole="ADDRESS" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="PASSPORT">
+          <Key>
+            <PropertyRef Name="id_passport" />
+          </Key>
+          <Property Name="id_passport" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serial" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="PERSON" Relationship="Self.FK_PERSON_PASSPORT" FromRole="PASSPORT" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="id_person" />
+          </Key>
+          <Property Name="id_person" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="middle_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_address" Type="Int32" Nullable="false" />
+          <Property Name="id_passport" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ADDRESS" Relationship="Self.FK_PERSON_ADDRESS" FromRole="PERSON" ToRole="ADDRESS" />
+          <NavigationProperty Name="PASSPORT" Relationship="Self.FK_PERSON_PASSPORT" FromRole="PERSON" ToRole="PASSPORT" />
+        </EntityType>
+        <Association Name="FK_PERSON_ADDRESS">
+          <End Role="ADDRESS" Type="Self.ADDRESS" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADDRESS">
+              <PropertyRef Name="id_address" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="id_address" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_PASSPORT">
+          <End Role="PASSPORT" Type="Self.PASSPORT" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PASSPORT">
+              <PropertyRef Name="id_passport" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="id_passport" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="oopdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADDRESS" EntityType="Self.ADDRESS" />
+          <EntitySet Name="PASSPORT" EntityType="Self.PASSPORT" />
+          <EntitySet Name="PERSON" EntityType="Self.PERSON" />
+          <AssociationSet Name="FK_PERSON_ADDRESS" Association="Self.FK_PERSON_ADDRESS">
+            <End Role="ADDRESS" EntitySet="ADDRESS" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_PASSPORT" Association="Self.FK_PERSON_PASSPORT">
+            <End Role="PASSPORT" EntitySet="PASSPORT" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище oopdbModelContainer" CdmEntityContainer="oopdbEntities">
+          <EntitySetMapping Name="ADDRESS">
+            <EntityTypeMapping TypeName="oopdbModel.ADDRESS">
+              <MappingFragment StoreEntitySet="ADDRESS">
+                <ScalarProperty Name="id_address" ColumnName="id_address" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="house" ColumnName="house" />
+                <ScalarProperty Name="build" ColumnName="build" />
+                <ScalarProperty Name="flat" ColumnName="flat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PASSPORT">
+            <EntityTypeMapping TypeName="oopdbModel.PASSPORT">
+              <MappingFragment StoreEntitySet="PASSPORT">
+                <ScalarProperty Name="id_passport" ColumnName="id_passport" />
+                <ScalarProperty Name="serial" ColumnName="serial" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSON">
+            <EntityTypeMapping TypeName="oopdbModel.PERSON">
+              <MappingFragment StoreEntitySet="PERSON">
+                <ScalarProperty Name="id_person" ColumnName="id_person" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="id_address" ColumnName="id_address" />
+                <ScalarProperty Name="id_passport" ColumnName="id_passport" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

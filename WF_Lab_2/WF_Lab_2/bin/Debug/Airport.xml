@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<Control xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <airport>
+    <Airport>
+      <airList />
+      <Airport>5</Airport>
+      <Type>пассажирский</Type>
+      <Model>Airbus</Model>
+      <Crew>
+        <string>Стасенко Виктор Сергеевич пилот 35 8</string>
+        <string>Григоренко Сергей Анатольевич пилот 56 24</string>
+        <string>Фалько Анастасия Викторовна стюардесса 24 4</string>
+      </Crew>
+      <PassCapacity>240</PassCapacity>
+      <YearOfCreate>2000</YearOfCreate>
+      <LoadCapacity>75</LoadCapacity>
+      <LastTS>2023-02-05T00:00:00</LastTS>
+      <FullSet>true</FullSet>
+      <OtherDesc />
+      <Owner>TurkishAirlines 1970 Turkish АН СУ</Owner>
+    </Airport>
+    <Airport>
+      <airList />
+      <Airport>10</Airport>
+      <Type>пассажирский</Type>
+      <Model>Heinkel</Model>
+      <Crew>
+        <string>Стасенко Виктор Сергеевич пилот 35 8</string>
+        <string>Григоренко Сергей Анатольевич пилот 56 24</string>
+        <string>Фалько Анастасия Викторовна стюардесса 24 4</string>
+      </Crew>
+      <PassCapacity>241</PassCapacity>
+      <YearOfCreate>2023</YearOfCreate>
+      <LoadCapacity>46</LoadCapacity>
+      <LastTS>2023-02-01T00:00:00</LastTS>
+      <FullSet>false</FullSet>
+      <OtherDesc />
+      <Owner>FDG 1981 Denmark АН</Owner>
+    </Airport>
+    <Airport>
+      <airList />
+      <Airport>1</Airport>
+      <Type>пассажирский</Type>
+      <Model>СУ</Model>
+      <Crew>
+        <string>Стасенко Виктор Сергеевич пилот 35 8</string>
+        <string>Григоренко Сергей Анатольевич пилот 56 24</string>
+        <string>Фалько Анастасия Викторовна стюардесса 24 4</string>
+      </Crew>
+      <PassCapacity>266</PassCapacity>
+      <YearOfCreate>1981</YearOfCreate>
+      <LoadCapacity>55</LoadCapacity>
+      <LastTS>2023-02-10T00:00:00</LastTS>
+      <FullSet>false</FullSet>
+      <OtherDesc />
+      <Owner>TurkishAirlines 1970 Turkish АН СУ</Owner>
+    </Airport>
+  </airport>
+</Control>

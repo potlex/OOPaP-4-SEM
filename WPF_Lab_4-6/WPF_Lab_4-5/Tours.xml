@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Tours>
+    <Tour>
+      <Name>50 РУБЛЕЙ</Name>
+      <Price>26</Price>
+      <Counrty>Украина</Counrty>
+      <Time>1</Time>
+      <Type>Авиатур</Type>
+      <Rating>43</Rating>
+      <Image>file:///D:/ООПиП 2s/sort.png</Image>
+      <Description>765756</Description>
+    </Tour>
+    <Tour>
+      <Name>ФИЩИФ</Name>
+      <Price>9</Price>
+      <Counrty>Франция</Counrty>
+      <Time>345</Time>
+      <Type>Автобусный</Type>
+      <Rating>34</Rating>
+      <Image>file:///D:/ООПиП 2s/egyot.jpg</Image>
+      <Description>53453</Description>
+    </Tour>
+    <Tour>
+      <Name>Круговой тур</Name>
+      <Price>4370</Price>
+      <Counrty>Германия</Counrty>
+      <Time>12</Time>
+      <Type>Автобусный</Type>
+      <Rating>4</Rating>
+      <Image>file:///D:/ООПиП 2s/upload.png</Image>
+      <Description>Невероятный тур по окрестностям Германии</Description>
+    </Tour>
+    <Tour>
+      <Name>Круговой тур</Name>
+      <Price>4370</Price>
+      <Counrty>Германия</Counrty>
+      <Time>12</Time>
+      <Type>Автобусный</Type>
+      <Rating>4</Rating>
+      <Image>file:///D:/ООПиП 2s/upload.png</Image>
+      <Description>Невероятный тур по окрестностям Германии</Description>
+    </Tour>
+    <Tour>
+      <Name>Круговой тур</Name>
+      <Price>4370</Price>
+      <Counrty>Германия</Counrty>
+      <Time>12</Time>
+      <Type>Автобусный</Type>
+      <Rating>4</Rating>
+      <Image>file:///D:/ООПиП 2s/upload.png</Image>
+      <Description>Невероятный тур по окрестностям Германии</Description>
+    </Tour>
+    <Tour>
+      <Name>Круговой тур</Name>
+      <Price>4370</Price>
+      <Counrty>Германия</Counrty>
+      <Time>12</Time>
+      <Type>Автобусный</Type>
+      <Rating>4</Rating>
+      <Image>file:///D:/ООПиП 2s/upload.png</Image>
+      <Description>Невероятный тур по окрестностям Германии</Description>
+    </Tour>
+    <Tour>
+      <Name>Круговой тур</Name>
+      <Price>100000</Price>
+      <Counrty>Германия</Counrty>
+      <Time>12</Time>
+      <Type>Автобусный</Type>
+      <Rating>4</Rating>
+      <Image>file:///D:/ООПиП 2s/upload.png</Image>
+      <Description>Невероятный тур по окрестностям Германии</Description>
+    </Tour>
+  </Tours>
+</Company>

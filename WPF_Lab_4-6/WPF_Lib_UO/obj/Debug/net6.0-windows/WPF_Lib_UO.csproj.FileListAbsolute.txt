@@ -1,0 +1,4 @@
+D:\ООПиП 2s\WPF_Lab_4-6\WPF_Lib_UO\obj\Debug\net6.0-windows\WPF_Lib_UO.csproj.AssemblyReference.cache
+D:\ООПиП 2s\WPF_Lab_4-6\WPF_Lib_UO\obj\Debug\net6.0-windows\WPF_Lib_UO_MarkupCompile.cache
+D:\ООПиП 2s\WPF_Lab_4-6\WPF_Lib_UO\obj\Debug\net6.0-windows\Template.g.cs
+D:\ООПиП 2s\WPF_Lab_4-6\WPF_Lib_UO\obj\Debug\net6.0-windows\WPF_Lib_UO_MarkupCompile.lref

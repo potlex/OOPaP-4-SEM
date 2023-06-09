@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище oopdbModelContainer" CdmEntityContainer="oopdbEntities1">
+    <EntitySetMapping Name="RECORD">
+      <EntityTypeMapping TypeName="oopdbModel.RECORD">
+        <MappingFragment StoreEntitySet="RECORD">
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="TIME" ColumnName="TIME" />
+          <ScalarProperty Name="FREE" ColumnName="FREE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
